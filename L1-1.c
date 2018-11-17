@@ -38,7 +38,6 @@ L1-1 天梯赛座位分配
 
 
 #include <stdio.h>
-
 int Step(int* M, int N, int X){
 	// 座位号增长步长
 	int step = 0, i;
@@ -63,14 +62,12 @@ int main () {
 			scanf("%d", &M[i++]);
 		}
   	}
-
   	{// 座位号安排
 		int i = 0, j = 0, k = 0;
 		int step = 0;
 
 		for(i = 0; i < N; i++){
 			printf("#%d", i);
-
 			k = 0; // 0号队员
 			j = i + 1; // 每校0号队员座位号是顺递增的
 			do{
@@ -88,3 +85,5 @@ int main () {
   	}
   	return 0;
 }
+
+
