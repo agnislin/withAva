@@ -58,33 +58,33 @@ int main () {
   	scanf("%d", &N);
 
   	{// 每校的队伍数M[N]
-    		int i = 0;
-    		while( i < N ){
-    			scanf("%d", &M[i++]);
-    		}
+		int i = 0;
+		while( i < N ){
+			scanf("%d", &M[i++]);
+		}
   	}
 
   	{// 座位号安排
-    		int i = 0, j = 0, k = 0;
-    		int step = 0;
+		int i = 0, j = 0, k = 0;
+		int step = 0;
 
-    		for(i = 0; i < N; i++){
-						printf("#%d", i);
+		for(i = 0; i < N; i++){
+			printf("#%d", i);
 
-						k = 0; // 0号队员
-						j = i + 1; // 每校0号队员座位号是顺递增的
-						do{
-								if( k % 10 == 0 ){
-										step = Step(M, N, (k/10)); // 获取座位号的递增步长
-										if( k == 0 )
-												j -= step; // 第一位队员不需加步长
-										printf("\n");
-								}
-								j += step;
-								printf("%d ", j);
-						}while( ++k < M[i] * 10 );
-            printf("\n");
-    		}
+			k = 0; // 0号队员
+			j = i + 1; // 每校0号队员座位号是顺递增的
+			do{
+				if( k % 10 == 0 ){
+					step = Step(M, N, (k/10)); // 获取座位号的递增步长
+					if( k == 0 )
+						j -= step; // 第一位队员不需加步长
+					printf("\n");
+				}
+				j += step;
+				printf("%d ", j);
+			}while( ++k < M[i] * 10 );
+			printf("\n");
+		}
   	}
   	return 0;
 }
